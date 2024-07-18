@@ -40,6 +40,7 @@ const CheckboxSelector: React.FC = () => {
           label={`Option ${index + 1}`}
           checked={isChecked}
           onChange={() => CambioStateCheckbox(option as keyof typeof selectCheckbox)}
+          style ={{fontSize: '14px',color: '#1A1A1A'}}
         />
       ))}
     </>
