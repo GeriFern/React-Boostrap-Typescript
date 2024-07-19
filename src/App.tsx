@@ -8,10 +8,12 @@ import MobileSidebar from './componentes/MobileSidebar';
 import './App.css'
 
 function App() {
+  // Estados para manejar la visibilidad del sidebar
   const [showSidebar, setShowSidebar] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const [activeKey, setActiveKey] = useState("first");
 
+  // Efecto para manejar el cambio de tamaño de la ventana
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 992);
@@ -20,10 +22,19 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Funciones para manejar la visibilidad del sidebar
   const handleCloseSidebar = () => setShowSidebar(false);
   const handleShowSidebar = () => {
     if (isMobile) {
       setShowSidebar(true);
+    }
+  };
+
+  // Función para manejar la selección de pestañas
+  const handleSelect = (eventKey: string | null) => {
+    if (eventKey) {
+      setActiveKey(eventKey);
+      handleCloseSidebar(); // Cierra el sidebar móvil después de la selección
     }
   };
 
@@ -47,14 +58,19 @@ function App() {
                 </Col>
               </>
             )}
-            
+
             <Col xs={12} lg={isMobile ? 12 : 9} style={{ height: '100%', overflowY: 'auto' }}>
               <MainContent isMobile={isMobile} activeKey={activeKey} />
             </Col>
           </Row>
         </Tab.Container>
       </Container>
-      <MobileSidebar show={showSidebar} onHide={handleCloseSidebar} />
+      <MobileSidebar
+        show={showSidebar}
+        onHide={handleCloseSidebar}
+        activeKey={activeKey}
+        onSelect={handleSelect}
+      />
     </div>
   );
 }

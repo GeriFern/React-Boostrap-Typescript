@@ -36,7 +36,7 @@ const Tableradios: React.FC = () => {
   });
 
   // Función para manejar el cambio de estado de los radios
-  const CambioStateRadios = (row: string, col: number) => {
+  const cambioStateRadios = (row: string, col: number) => {
     setSelectRadios((prevState) => ({
       ...prevState,
       [row]: col,
@@ -54,7 +54,7 @@ const Tableradios: React.FC = () => {
             name={row}
             type="radio"
             checked={selectRadios[row] === index}
-            onChange={() => CambioStateRadios(row, index)}
+            onChange={() => cambioStateRadios(row, index)}
             aria-label={`radio ${index + 1}`}
           />
         </td>

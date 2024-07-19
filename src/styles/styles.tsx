@@ -16,46 +16,26 @@ export const navbarStyle = {
   paddingRight: '20px',
 };
 
-export const iconoBellFill = {
+export const iconStyle = {
   width: '44px',
   height: '44px',
-  top: '16px',
-  left: '748px'
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 };
 
-export const iconoGearFill = {
-  width: '44px',
-  height: '44px',
-  top: '16px',
-  left: '804px'
-};
-export const iconoPersonCircle = {
-  width: '44px',
-  height: '44px',
-  top: '16px',
-  left: '860px'
-};
-
-/* SIDEBAR */
-// export const  ={
-//   width: '44px', 
-//   height: '44px', 
-//   top: '16px', 
-//   left: '860px'
-// };
-
+/* Style de SIDEBAR */
 export const StyledNav = styled(Nav)`
-  border-right: 1.5px solid #979797;
-  height: 868px;
+  padding-top:15px;
 `;
 
 export const StyledNavLink = styled(Nav.Link)`
-  
   font-size: 16px;
   font-weight: 400;
   line-height: 21.82px;
   letter-spacing: 0.5px;
   text-align: left;
+  margin-bottom: 20px;
   color: #926642;
   background-color: #ffffff;
 
@@ -69,10 +49,9 @@ export const StyledNavLink = styled(Nav.Link)`
   }
 `;
 
+
 /* Styles de MainContent */
 export const containerStyle = {
-  // width: '60px',
-  // height: '24px',
   padding: '4px 6px',
   borderRadius: '15px 15px 15px 15px',
   background: '#A8E2F0',

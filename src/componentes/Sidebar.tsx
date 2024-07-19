@@ -1,16 +1,17 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { StyledNav, StyledNavLink } from '../styles/styles';
 
 function Sidebar() {
   return (
-    <Nav variant="pills" className="flex-column">
+    <StyledNav variant="pills" className="flex-column">
       <Nav.Item>
-        <Nav.Link eventKey="first" className="custom-nav-link" >Menu item 1</Nav.Link>
+        <StyledNavLink eventKey="first">Menu item 1</StyledNavLink>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="second" className="custom-nav-link" >Menu item 2</Nav.Link>
+        <StyledNavLink eventKey="second" disabled>Menu item 2</StyledNavLink>
       </Nav.Item>
-    </Nav>
+    </StyledNav>
   );
 }
 

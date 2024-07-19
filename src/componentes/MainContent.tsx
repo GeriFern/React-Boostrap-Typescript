@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row, Container, Tab, Button, Badge } from 'react-bootstrap';
-import {FileEarmarkFill } from 'react-bootstrap-icons';
+import { FileEarmarkFill } from 'react-bootstrap-icons';
 import Tableradios from './Tableradios';
 import CheckboxSelector from './CheckboxSelector';
 import { containerStyle, buttonStyle1, buttonStyle2 } from '../styles/styles'; // Importa los estilos desde styles.tsx
@@ -13,7 +13,7 @@ interface MainContentProps {
 
 function MainContent({ isMobile, activeKey }: MainContentProps) {
     const badges = new Array(30).fill('Badge');
-    
+
 
     return (
         <Tab.Content>
@@ -63,7 +63,7 @@ function MainContent({ isMobile, activeKey }: MainContentProps) {
                                 </Col>
                             </Row>
                         </Col>
-                        
+
                         {/* Columna para la línea vertical */}
                         <Col md="auto" className="d-none d-md-block">
                             <div style={{
@@ -102,7 +102,7 @@ function MainContent({ isMobile, activeKey }: MainContentProps) {
                         </Col>
                     </Row >
                     {/* Fila 3: Botones */}
-                    <Row  style={{ justifyContent: 'end', marginTop: '10px' }}>
+                    <Row style={{ justifyContent: 'end', marginTop: '10px' }}>
                         <Button style={buttonStyle1}> Button </Button>
                         <Button style={buttonStyle2}> Button </Button>
                     </Row>
